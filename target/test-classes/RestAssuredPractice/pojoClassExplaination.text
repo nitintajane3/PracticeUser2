@@ -1,0 +1,43 @@
+
+POJO stand for plain old java object
+kind of data structure that will include fields with getter setter method
+
+before creating pojo first understand the json hierarchy like which is parent and which is child.
+below json viewer will give you idea about it
+https://jsoneditoronline.org/#left=local.vozazo&right=local.liraso
+
+https://developer.atlassian.com/server/jira/platform/jira-rest-api-examples/
+{
+    "fields": {
+       "project":
+       {
+          "key": "TEST"
+       },
+       "summary": "REST ye merry gentlemen.",
+       "description": "Creating of an issue using project keys and issue type names using the REST API",
+       "issuetype": {
+          "name": "Bug"
+       }
+   }
+}
+
+issuetype and project name we will create seperate pojo class.
+and class name does not matter and may it differ from actual name from json data like projects and issuetype. you can create class
+with different name.
+
+In pojo class you can create constructor automatically. from right click into pojo class > source > generate constructor using fields
+If this is not generated as expected then before that just do right click > source > generate to string then try to create constructor 
+
+We need to create one payload pojo class and inside this class we need to mention this all parameter like project, summary,
+description, issue type.
+
+After that again we need to create final pojo class which is called as fields because all information present inside fields and fields
+is parent of all other parameter.
+and inside this class we need to create getter and setter for payload pojo class.
+
+This above json we need to create 4 pojo class.
+Fields.class
+IssueType.class
+Payload.class
+Projects.class
+
